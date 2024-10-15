@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker</title>
+</head>
+<body>
+    <h1 id="score">0</h1>
+    <img src="images.jpeg" alt="image" id="click">
+    <script>
+        let val = 0
+        const score = document.getElementById("score")
+        document.getElementById("click").onclick = () => {
+            val++
+            score.innerText = val
+            if(val > 100){
+                <img src= "3 (3).jpeg" alt="image" >
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

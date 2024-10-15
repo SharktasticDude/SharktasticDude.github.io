@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker2</title>
+</head>
+<body>
+<h1 id="score">0</h1>
+
+    <img src="images.jpeg" id="click" width="500" >
+
+</body>
+</html>
+<script>
+click.addEventListener("click",up)
+var score = 0
+function up(){
+score=score+1
+console.log(score)
+document.getElementById("score").innerHTML = score;
+
+if(val > 10){
+    score= "win"
+}
+}
+
+
+
+</script>
