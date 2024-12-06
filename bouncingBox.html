@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<style>
+    #d {
+        width: 30px;
+        height: 30px;
+        background-color: red;
+        position: absolute;
+        top: 100px;
+        left: 100px
+    }
+</style>
+
+<body>
+    <div id="d">
+
+
+    </div>
+
+
+
+</body>
+<script>
+    var thing = 1
+    var position = 100
+    var otherPosition = 100
+    var direction = thing
+    var otherDirection = thing
+
+    document.getElementById("d").addEventListener("click", moveBox)
+    setInterval(moveBox, 10)
+    function moveBox() {
+        //change box position
+        document.getElementById("d").style.left = position + "px"
+        document.getElementById("d").style.top = otherPosition + "px"
+        position = position + direction
+        otherPosition = otherPosition + otherDirection
+        if (position >= 1340) {
+            direction = -thing
+        }
+        if (position <= 10) {
+            direction = thing
+        }
+        if (otherPosition >= 615) {
+            otherDirection = -thing
+        }
+        if (otherPosition <= 10) {
+            otherDirection = thing
+        }
+    }
+    document.getElementById("d").addEventListener("click", speed)
+function speed(){
+speed = speed + 5
+   alert(Hmm) 
+}
+
+
+
+
+
+</script>
+
+</html>

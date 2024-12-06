@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+</head>
+<style>
+
+
+
+</style>
+
+<body>
+
+
+  <img src="Cat.png" id="click" width="500">
+ <p id="num">1</p>
+  <h1 id="score">0</h1>
+  <p id="par">-Score-</p>
+
+  <button id="uper">Upgade</button>
+
+  <p><img src="scary.png" id="im"></p>
+</body>
+
+</html>
+<script>
+  document.getElementById("click").addEventListener("click", up)
+  var score = 0
+  function up() {
+    score = score + 1
+    console.log(score)
+    document.getElementById("score").innerHTML = score;
+    alert("CAT");
+  }
+  document.getElementById("par").addEventListener("click", color)
+  function color() {
+
+    document.getElementById("par").style.color = "red"
+  }
+
+  document.getElementById("im").addEventListener("mouseover", size)
+  function size() {
+
+    document.getElementById("im").style.width =  "50in"
+
+  }
+  document.getElementById("num").addEventListener("click", nu)
+  var num = 1
+  function nu() {
+    num = num + 1
+    console.log(num)
+    document.getElementById("num").innerHTML = num;
+    alert("hmm");
+  }
+
+
+
+
+
+
+
+
+
+____________________________________
+ document.getElementById("num").addEventListener("click", upgrade)
+  
+  function upgrade() {
+    num = num + 10
+  }
+
+  
+
+
+
+</script>

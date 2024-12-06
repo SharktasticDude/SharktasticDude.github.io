@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker2</title>
+
+
+</head>
+<body>
+<h1 id="score">0</h1>
+
+    <img src="images.jpeg" id="lick" width="500" >
+    
+<button id="uper">Upgade</button>
+
+
+</body>
+</html>
+<script>
+var upy = false 
+var price = 10
+if (score >= 10 ){
+var upy = true
+
+}
+
+var scorePerClick = 1
+document.getElementById("lick").addEventListener("click",up)
+var score = 0
+function up(){ 
+score=score+scorePerClick
+console.log(score)
+document.getElementById("score").innerHTML = score;
+}
+
+
+
+document.getElementById("uper").addEventListener("click",upgrade)
+
+function upgrade(){
+//make it so it subtracts from score
+if(score>=price){
+  scorePerClick= scorePerClick+1;
+score= score-price;
+  price = price + 5
+  
+  alert("hmm")
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
