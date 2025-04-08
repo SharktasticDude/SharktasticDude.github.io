@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ball with Gravity</title>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+
+        canvas.width = 1500;
+        canvas.height = 800;
+
+        var ballX = []; //200
+        var ballY = [];   //50
+        var ballSpeedX = [];  //2
+        var ballSpeedY = [];  //0
+        var ballRadius = [];  //10
+
+        var gravity = 0.2;  //0.2
+        var bounceFactor = 1.;  //0.7
+        var friction = [];  //0.99
+        setInterval(loop, 16);
+
+        for (var i = 0; i < 500; i++) {
+            ballX.push(Math.random() * canvas.width)
+            ballY.push(Math.random() * canvas.height)
+            ballSpeedX.push(Math.random() * 2)
+            ballSpeedY.push(Math.random() * 0)
+            ballRadius.push(Math.random() * 10 + 10)
+            friction.push(0.99)
+        }
+
+
+
+        function loop() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (var i = 0; i < 500; i++) {
+                ballSpeedY[i] = ballSpeedY[i] + gravity;
+                ballX[i] = ballX[i] + ballSpeedX[i];
+                ballY[i] = ballY[i] + ballSpeedY[i];
+
+                if (ballX[i] - ballRadius[i] < 0 || ballX[i] + ballRadius[i] > canvas.width) {
+                    ballSpeedX[i] = -ballSpeedX[i] * friction[i];
+                }
+
+                if (ballX[i] + ballRadius[i] > canvas.width) {
+                    ballSpeedX[i] = -ballSpeedX[i] * friction[i];
+                }
+
+                if (ballY[i] + ballRadius[i] > canvas.height ) {
+                    ballY[i] = canvas.height - ballRadius[i];
+                    ballSpeedY[i] = -ballSpeedY[i] * bounceFactor;
+                    ballSpeedX[i] = ballSpeedX[i] * friction[i];
+                }
+                if (ballY[i] - ballRadius[i] < 0){
+                    ballSpeedY[i] = -ballSpeedY[i] * bounceFactor
+                }
+                ctx.fillStyle = "blue";
+                ctx.beginPath();
+                ctx.arc(ballX[i], ballY[i], ballRadius[i], 0, Math.PI * 2);
+                ctx.fill();
+
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

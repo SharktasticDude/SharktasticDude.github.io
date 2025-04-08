@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <canvas id="canvas" width="1700" height="1000"></canvas>
+
+</body>
+
+</html>
+<script>
+
+
+
+
+    var x = []
+    var speed = []
+    var y = []
+    var speedTwo = []
+    var w = []
+    var wtwo = []
+    var c = document.getElementById("canvas");
+    var ctx = c.getContext("2d");
+    setInterval(main, 50)
+    function main() {
+        ctx.clearRect(0, 0, 2000, 2000)
+        for ( var i = 0; i < 5; i = i + 1) {
+
+            ctx.fillRect(x[i], y[i], w[i], wtwo[i]);
+            if (x[i] > 1700) {
+                speed[i] = -speed[i]
+            }
+            if (x[i] < 0) {
+                speed[i] = -speed[i]
+            }
+            if (y[i] > 1000) {
+                speedTwo[i] = -speedTwo[i]
+            }
+            if (y[i] < 0) {
+                speedTwo[i] = -speedTwo[i]
+                
+            }
+            y[i] = y[i] + speedTwo[i]
+            x[i] = x[i] + speed[i];
+
+            
+
+        }
+    }
+
+for ( var i = 0; i < 5; i = i + 1){
+    x.push(Math.random(1) * 1700)
+    y.push(Math.random(1) * 600)
+    w.push(Math.random(1) * 100)
+    wtwo.push(Math.random(1) * 100)
+    speed.push(Math.random(1) * 100)
+    speedTwo.push(Math.random(1) * 100)
+   
+
+}
+
+
+
+
+
+</script>
